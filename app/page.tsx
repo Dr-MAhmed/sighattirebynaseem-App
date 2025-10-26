@@ -148,7 +148,7 @@ export default async function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium">Secure Payment</h3>
+              <h3 className="text-lg font-medium">Secure Payment!</h3>
               <p className="text-sm text-muted-foreground">
                 Cash on delivery available
               </p>
