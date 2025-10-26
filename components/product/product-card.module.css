@@ -1,0 +1,53 @@
+.hijabLabel {
+  animation: foldRightToLeft 5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  font-size: 9px;
+  padding: 3px 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, #B870DB, #9A5FFF);
+  transform-style: preserve-3d;
+  display: inline-block;
+  border-radius: 0 4px 4px 0;
+  color: white;
+  font-weight: bold;
+  border-left: 1px solid rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,255,255,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.hijabLabel:hover {
+  animation-play-state: paused;
+}
+
+.sparkleIcon {
+  animation: sparkle 1.5s ease-in-out infinite;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+@keyframes foldRightToLeft {
+  0% { transform: scaleX(0) rotateY(90deg); transform-origin: left; opacity: 0; }
+  15% { transform: scaleX(1) rotateY(0); transform-origin: left; opacity: 1; }
+  85% { transform: scaleX(1) rotateY(0); transform-origin: left; opacity: 1; }
+  100% { transform: scaleX(0) rotateY(-90deg); transform-origin: right; opacity: 0; }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+@media (min-width: 640px) {
+  .hijabLabel {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hijabLabel {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+} 

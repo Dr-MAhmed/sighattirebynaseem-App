@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: "Alice", serif;
+}
+
+@layer base {
+  :root {
+    --background: 280 30% 98%;
+    --foreground: 280 10% 10%;
+
+    --card: 280 30% 98%;
+    --card-foreground: 280 10% 10%;
+
+    --popover: 280 30% 98%;
+    --popover-foreground: 280 10% 10%;
+
+    --primary: 280 60% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 20% 90%;
+    --secondary-foreground: 280 10% 20%;
+
+    --muted: 280 20% 92%;
+    --muted-foreground: 280 10% 40%;
+
+    --accent: 280 20% 92%;
+    --accent-foreground: 280 10% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 280 20% 88%;
+    --input: 280 20% 88%;
+    --ring: 280 60% 65%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 280 30% 8%;
+    --foreground: 280 10% 98%;
+
+    --card: 280 30% 10%;
+    --card-foreground: 280 10% 98%;
+
+    --popover: 280 30% 10%;
+    --popover-foreground: 280 10% 98%;
+
+    --primary: 280 60% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 20% 20%;
+    --secondary-foreground: 280 10% 98%;
+
+    --muted: 280 20% 18%;
+    --muted-foreground: 280 10% 70%;
+
+    --accent: 280 20% 18%;
+    --accent-foreground: 280 10% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 280 20% 25%;
+    --input: 280 20% 25%;
+    --ring: 280 60% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Custom styling for viewers toast */
+.viewers-toast {
+  padding: 0 !important;
+  min-height: 0 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+  background: transparent !important;
+}
+
+.viewers-toast .Toastify__toast-body {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.viewers-toast .Toastify__close-button {
+  color: white !important;
+  opacity: 0.8 !important;
+}
+
+/* Animation for the viewers toast */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(139, 92, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+  }
+}
+
+.viewers-toast > div {
+  animation: pulse-border 2s infinite;
+}
+
+/* Order notification toast styling */
+.order-notification-toast {
+  padding: 0 !important;
+  min-height: 0 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+  background: transparent !important;
+  max-width: 350px !important;
+}
+
+.order-notification-toast .Toastify__toast-body {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.order-notification-toast .Toastify__close-button {
+  color: white !important;
+  opacity: 0.8 !important;
+}
+
+/* Animation for the order notification */
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.order-notification-toast > div {
+  animation: slide-in-left 0.5s ease-out forwards;
+}
+
+/* Hijab Label Animations */
+@keyframes foldRightToLeft {
+  0% { transform: scaleX(0) rotateY(90deg); transform-origin: left; opacity: 0; }
+  15% { transform: scaleX(1) rotateY(0); transform-origin: left; opacity: 1; }
+  85% { transform: scaleX(1) rotateY(0); transform-origin: left; opacity: 1; }
+  100% { transform: scaleX(0) rotateY(-90deg); transform-origin: right; opacity: 0; }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.hijab-label {
+  animation: foldRightToLeft 5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  font-size: 9px;
+  padding: 3px 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, #B870DB, #9A5FFF);
+  transform-style: preserve-3d;
+  display: inline-block;
+  border-radius: 0 4px 4px 0;
+  color: white;
+  font-weight: bold;
+  border-left: 1px solid rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,255,255,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.hijab-label:hover {
+  animation-play-state: paused;
+}
+
+.sparkle-icon {
+  animation: sparkle 1.5s ease-in-out infinite;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+@media (min-width: 640px) {
+  .hijab-label {
+    bottom: 140px;
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hijab-label {
+    bottom: 170px;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

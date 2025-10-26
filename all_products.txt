@@ -1,0 +1,3 @@
+Error: firestore:documents:list is not a Firebase command
+
+Did you mean firestore:databases:list?
